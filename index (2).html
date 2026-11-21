@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8eef1">
+  <meta name="description" content="Amour Beauty Store — Pix, redes sociais, Scoop Surpresa e novidades do Instagram em uma vitrine elegante.">
+  <meta property="og:title" content="Amour Beauty Store ♡">
+  <meta property="og:description" content="Conheça a Amour, copie o Pix, acompanhe nossas redes e descubra o Scoop Surpresa.">
+  <meta property="og:type" content="website">
+  <title>Amour Beauty Store ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fcf7f8;
+      --paper:#fffdfc;
+      --paper-2:#fff7fa;
+      --wine:#7a3b53;
+      --wine-deep:#4f2a39;
+      --rose:#b36683;
+      --rose-soft:#d9b0bf;
+      --blush:#f2dfe5;
+      --blush-2:#f6eaee;
+      --gold:#c9a276;
+      --ink:#5c3b4a;
+      --soft:#8f7480;
+      --line:#ecdde3;
+      --shadow:0 20px 50px rgba(122,59,83,.12);
+      --shadow-2:0 30px 60px rgba(122,59,83,.16);
+      --radius:26px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'DM Sans',Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, #fff8fb 0, #fff8fb 18%, transparent 35%),
+        radial-gradient(circle at top right, #f4dfe7 0, transparent 28%),
+        linear-gradient(180deg,#fcf7f8 0%,#fbf4f6 100%);
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    button{font:inherit;cursor:pointer;border:0}
+    button:focus-visible,a:focus-visible{outline:3px solid #d89fb5;outline-offset:4px}
+
+    .page{
+      max-width:760px;
+      margin:0 auto;
+      min-height:100vh;
+      background:linear-gradient(180deg,#fffdfd 0%, #fff9fb 100%);
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 0 70px rgba(122,59,83,.07);
+    }
+    .page::before,
+    .page::after{
+      content:'';
+      position:absolute;
+      border-radius:50%;
+      pointer-events:none;
+      filter:blur(8px);
+    }
+    .page::before{
+      width:300px;height:300px;right:-100px;top:160px;
+      background:radial-gradient(circle,rgba(219,176,191,.34) 0%,rgba(219,176,191,0) 70%);
+    }
+    .page::after{
+      width:240px;height:240px;left:-90px;top:580px;
+      background:radial-gradient(circle,rgba(201,162,118,.15) 0%,rgba(201,162,118,0) 72%);
+    }
+
+    .topbar{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter:blur(18px);
+      background:rgba(255,250,251,.72);
+      border-bottom:1px solid rgba(236,221,227,.65);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:18px 22px;
+    }
+    .brand{
+      font-family:'DM Serif Display',Georgia,serif;
+      font-size:30px;
+      color:var(--wine-deep);
+      line-height:.85;
+      letter-spacing:-1px;
+    }
+    .brand small{
+      display:block;
+      margin-top:8px;
+      font-family:'DM Sans',sans-serif;
+      font-size:8px;
+      font-weight:800;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:#a17c8c;
+    }
+    .mini-pill{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid rgba(179,102,131,.18);
+      background:rgba(255,255,255,.75);
+      color:var(--wine);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:1.3px;
+      text-transform:uppercase;
+      box-shadow:0 8px 24px rgba(122,59,83,.08);
+      white-space:nowrap;
+    }
+
+    .hero{
+      position:relative;
+      padding:42px 24px 26px;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;
+      inset:18px 18px auto;
+      height:440px;
+      border-radius:34px;
+      background:
+        radial-gradient(circle at 22% 14%, rgba(255,255,255,.95), rgba(255,255,255,.2) 22%, transparent 32%),
+        linear-gradient(145deg,#f8ecef 0%,#f2d8e1 48%,#e5c2ce 100%);
+      box-shadow:var(--shadow-2);
+      z-index:0;
+    }
+    .hero-inner{position:relative;z-index:1;padding:28px 22px 34px;min-height:404px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:10px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;color:#995d77;
+    }
+    .eyebrow::before{content:'';width:22px;height:1px;background:currentColor}
+    h1,.section-title,.pix-title,.scoop-title,.spotlight-title,.social-title{font-family:'DM Serif Display',Georgia,serif;font-weight:400;letter-spacing:-1.2px}
+    h1{
+      margin:20px 0 16px;
+      font-size:clamp(52px,10.7vw,82px);
+      line-height:.98;
+      color:var(--wine-deep);
+      max-width:430px;
+    }
+    h1 em{font-style:italic;color:#a35f7c}
+    .hero p{
+      margin:0;
+      max-width:340px;
+      font-size:14px;
+      line-height:1.8;
+      color:#7c5b6a;
+    }
+    .hero-actions{
+      display:flex;flex-wrap:wrap;gap:12px;
+      margin-top:28px;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:52px;padding:0 18px;border-radius:18px;
+      font-weight:800;font-size:12px;letter-spacing:.4px;
+      transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+      transform-style:preserve-3d;
+    }
+    .btn:hover{transform:translateY(-2px) rotateX(3deg);box-shadow:0 16px 30px rgba(122,59,83,.16)}
+    .btn-primary{background:linear-gradient(135deg,var(--wine),#9b5f7a);color:#fff;box-shadow:0 15px 28px rgba(122,59,83,.22)}
+    .btn-secondary{background:rgba(255,255,255,.72);border:1px solid rgba(179,102,131,.16);color:var(--wine);box-shadow:0 12px 30px rgba(122,59,83,.09)}
+
+    .floating-stack{
+      position:absolute;right:28px;bottom:14px;width:230px;height:240px;pointer-events:none;
+    }
+    .float-card{
+      position:absolute;border-radius:24px;background:rgba(255,255,255,.6);
+      border:1px solid rgba(255,255,255,.72);
+      backdrop-filter:blur(18px);
+      box-shadow:0 18px 38px rgba(122,59,83,.14);
+      animation:float 6s ease-in-out infinite;
+      transform-style:preserve-3d;
+    }
+    .float-card.one{width:132px;height:156px;right:58px;top:8px;transform:rotate(-10deg);padding:20px;background:linear-gradient(180deg, rgba(255,255,255,.77), rgba(255,255,255,.45));}
+    .float-card.two{width:110px;height:116px;right:0;bottom:24px;transform:rotate(10deg);animation-delay:1s;padding:14px}
+    .float-card.three{width:102px;height:76px;left:10px;bottom:0;transform:rotate(-8deg);animation-delay:1.8s;padding:14px}
+    .float-label{font-size:10px;text-transform:uppercase;letter-spacing:1.8px;font-weight:800;color:#9a657d;display:block;margin-bottom:10px}
+    .float-title{font-family:'DM Serif Display',serif;font-size:28px;line-height:1;color:var(--wine-deep)}
+    .float-sub{font-size:11px;line-height:1.5;color:#7e6471;margin-top:8px}
+    .mini-orbs{display:flex;gap:8px;margin-top:8px}
+    .mini-orbs span{display:block;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#f5bfd0,#bd748e)}
+    .mini-orbs span:nth-child(2){background:linear-gradient(135deg,#f4d8be,#d69b79)}
+    .mini-orbs span:nth-child(3){background:linear-gradient(135deg,#e6c7dd,#8d6a93)}
+    .glass-chip{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 12px;border-radius:14px;
+      background:rgba(255,255,255,.62);
+      border:1px solid rgba(255,255,255,.8);
+      font-size:11px;font-weight:700;color:var(--wine);
+    }
+
+    .section{padding:22px 24px 0;scroll-margin-top:82px}
+    .section-overline{
+      display:block;margin-bottom:12px;
+      font-size:10px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;color:#ab6a85;
+    }
+    .section-title{margin:0 0 10px;font-size:44px;line-height:1.03;color:var(--wine-deep)}
+    .section-text{margin:0;max-width:500px;color:var(--soft);font-size:13px;line-height:1.82}
+
+    .action-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+      margin-top:18px;
+    }
+    .card{
+      position:relative;
+      background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,248,250,.92));
+      border:1px solid rgba(236,221,227,.9);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      transform-style:preserve-3d;
+      transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    }
+    .card:hover{transform:translateY(-4px) rotateX(2deg) rotateY(-2deg);box-shadow:var(--shadow-2);border-color:#e5ccd6}
+    .card::after{
+      content:'';position:absolute;inset:auto -20% -55% 35%;height:180px;
+      background:radial-gradient(circle,rgba(220,177,193,.16),rgba(220,177,193,0) 70%);
+      pointer-events:none;
+    }
+    .card.big{min-height:255px}
+    .social-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .pix-card{display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#fffafc 0%,#f7e5ec 100%)}
+    .pix-top small,.social-card small,.mini-card small{display:block;font-size:10px;font-weight:800;letter-spacing:1.9px;text-transform:uppercase;color:#a86982;margin-bottom:12px}
+    .pix-title{font-size:36px;line-height:1.02;color:var(--wine-deep);margin:0 0 12px}
+    .pix-card p{font-size:12px;line-height:1.75;color:#7f6370;margin:0 0 18px;max-width:320px}
+    .pix-button{width:100%;min-height:54px;border-radius:18px;background:linear-gradient(135deg,var(--wine),#9a5d79);color:#fff;font-size:13px;font-weight:800;box-shadow:0 14px 28px rgba(122,59,83,.22)}
+    .pix-note{display:block;margin-top:12px;font-size:10px;line-height:1.7;color:#916f80}
+
+    .social-card{min-height:119px;display:flex;flex-direction:column;justify-content:space-between}
+    .social-card .social-title{font-size:28px;line-height:1.02;color:var(--wine-deep);margin:0 0 8px;overflow-wrap:anywhere;hyphens:auto}
+    .social-card .social-title.handle{font-size:clamp(18px,4.6vw,24px);line-height:1.1;letter-spacing:-.4px}
+    .social-card{min-width:0}
+    .social-link{line-height:1.4}
+    .social-card p{margin:0;color:#856977;font-size:12px;line-height:1.65}
+    .social-link{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:11px;font-weight:800;color:var(--wine)}
+    .social-card.gradient{background:linear-gradient(145deg,#fffefe 0%,#f9edf1 100%)}
+    .social-card.highlight{background:linear-gradient(145deg,#fffaf3 0%,#f8ecdf 100%)}
+    .social-card.soft{background:linear-gradient(145deg,#fffefe 0%,#f2ebf6 100%)}
+    .social-link.muted{color:#ae91a0;cursor:default}
+    .shine::before{
+      content:'';position:absolute;inset:-30% auto auto -60%;width:70%;height:170%;
+      background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);
+      transform:rotate(15deg);animation:shine 5.2s linear infinite;
+      pointer-events:none;
+    }
+
+    .spotlight{
+      margin-top:18px;
+      display:grid;grid-template-columns:1fr 1fr;gap:16px;
+    }
+    .spot-card{padding:0;overflow:hidden;min-height:350px}
+    .spot-card .visual{
+      height:190px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+      background:radial-gradient(circle at 50% 20%, rgba(255,255,255,.7), rgba(255,255,255,0) 45%), linear-gradient(145deg,#f5dde6 0%,#e7becd 100%);
+    }
+    .spot-card:nth-child(2) .visual{background:radial-gradient(circle at 50% 20%, rgba(255,255,255,.74), rgba(255,255,255,0) 45%), linear-gradient(145deg,#f7e7d9 0%,#e9c8b2 100%)}
+    .visual::after{content:'✦';position:absolute;right:18px;top:16px;font-size:28px;color:#ffffffc4}
+    .visual svg{width:142px;height:150px;filter:drop-shadow(10px 14px 12px rgba(122,59,83,.18))}
+    .spot-body{padding:22px 18px 20px}
+    .spot-body small{display:block;font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:#a6627c;margin-bottom:10px}
+    .spotlight-title{font-size:30px;line-height:1.02;margin:0 0 10px;color:var(--wine-deep)}
+    .spot-body p{font-size:12px;line-height:1.72;color:var(--soft);margin:0 0 16px}
+    .social-card.wide{grid-column:1 / -1;min-height:0}
+    .spot-list{display:grid;gap:8px;margin-top:12px}
+    .spot-price{display:flex;align-items:baseline;gap:6px;margin:4px 0 14px;color:var(--wine-deep)}
+    .spot-price small{margin:0;font-size:11px;letter-spacing:1px;color:#a6627c}
+    .spot-price strong{font-family:'DM Serif Display',serif;font-weight:400;font-size:40px;line-height:1;letter-spacing:-1px}
+    .spot-badge{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:linear-gradient(135deg,var(--wine),#9a5d79);color:#fff;font-size:11px;font-weight:800;letter-spacing:.3px;margin-bottom:12px}
+    .spot-cta{width:100%;margin-top:16px}
+    .spot-chip{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:16px;background:#fff8fa;border:1px solid #f0dde4;font-size:11px;font-weight:700;color:#8d5d71}
+
+    .feed-section{padding-bottom:46px}
+    .feed-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px}
+    .feed-controls{display:flex;gap:8px;flex-shrink:0}
+    .icon-btn{
+      width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+      background:rgba(255,255,255,.86);border:1px solid #e7d4dc;color:var(--wine);
+      box-shadow:0 10px 20px rgba(122,59,83,.08);font-size:22px;
+    }
+    .feed-frame{
+      margin-top:20px;
+      padding:14px;
+      border-radius:30px;
+      background:linear-gradient(145deg,#fffdfd 0%,#fbf1f5 100%);
+      border:1px solid #efdee5;
+      box-shadow:var(--shadow);
+    }
+    .gallery-track{
+      display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:8px;
+      scroll-behavior:smooth;
+    }
+    .gallery-track::-webkit-scrollbar{display:none}
+    .slide{
+      position:relative;flex:0 0 76%;max-width:330px;min-height:360px;border-radius:26px;overflow:hidden;
+      scroll-snap-align:start;
+      background:linear-gradient(145deg,#e7c8d2,#d8b1c1);
+      box-shadow:0 18px 34px rgba(122,59,83,.14);
+    }
+    .slide:nth-child(2n){background:linear-gradient(145deg,#ead7c6,#dcb89e)}
+    .slide:nth-child(3n){background:linear-gradient(145deg,#e2d6e7,#c0afca)}
+    .slide .illustration{
+      height:100%;display:grid;place-items:center;
+      background:radial-gradient(circle at center, rgba(255,255,255,.36), transparent 65%);
+    }
+    .slide .illustration svg{width:80%;height:82%;filter:drop-shadow(4px 18px 16px rgba(73,42,55,.2))}
+    .slide-info{
+      position:absolute;left:0;right:0;bottom:0;padding:70px 18px 20px;
+      background:linear-gradient(transparent, rgba(60,31,45,.83));
+      color:#fff;z-index:1;
+    }
+    .slide-info span{display:block;font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:6px;opacity:.92}
+    .slide-info strong{font-family:'DM Serif Display',serif;font-size:26px;font-weight:400;line-height:1.02}
+    .slide.post{transform:translateZ(0);transition:transform .35s ease,box-shadow .35s ease}
+    .slide.post:hover{transform:translateY(-4px) rotateY(-1.5deg);box-shadow:0 25px 44px rgba(122,59,83,.21)}
+    .slide.post img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+    .slide.post:hover img{transform:scale(1.04)}
+    @media(prefers-reduced-motion:reduce){.slide.post,.slide.post img{transition:none}}
+    .feed-note{margin:14px 2px 0;color:#8d7180;font-size:11px;line-height:1.7}
+    /* Instagram: widget oficial visível por padrão; carrossel 3D se a API funcionar. */
+    .instagram-embed-wrap{position:relative;min-height:480px;border-radius:22px;overflow:hidden;background:#fff8fa}
+    /* A integração oficial cria e dimensiona seu próprio iframe; não force altura fixa. */
+    .simpleembed-holder{width:100%;min-height:200px;display:block;overflow:hidden}
+    .simpleembed-holder iframe{max-width:100%;border:0!important;display:block;margin:0 auto}
+    .instagram-embed-wrap{isolation:isolate}
+
+    .insta-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:42px 22px;min-height:260px;background:linear-gradient(145deg,#fdf1f5,#f3dbe4)}
+    .insta-fallback strong{font-family:'DM Serif Display',serif;font-weight:400;font-size:30px;line-height:1.05;color:var(--wine-deep)}
+    .insta-fallback p{margin:0;max-width:280px;font-size:12px;line-height:1.7;color:#856977}
+    .insta-fallback .btn{margin-top:8px}
+    .instagram-embed-wrap.is-fallback{min-height:0}
+    .instagram-embed-wrap.is-fallback .simpleembed-holder,.instagram-embed-wrap.is-fallback .instagram-loading{display:none}
+    .instagram-loading{padding:16px 14px 0;color:#916f80;font-size:12px;text-align:center}
+    .feed-external{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--wine);text-decoration:underline;text-underline-offset:3px;margin-top:12px}
+    .feed-controls[hidden],.gallery-track[hidden],.instagram-embed-wrap[hidden]{display:none!important}
+    .gallery-track[hidden]{visibility:hidden}
+
+
+
+    .end-cta{margin:10px 24px 34px;padding:30px;border-radius:26px;background:linear-gradient(135deg,#f5e2e8,#edd0dc);box-shadow:0 20px 45px rgba(122,59,83,.1)}
+    .end-cta .btn{margin-top:22px}
+    .footer{
+      border-top:1px solid var(--line);
+      padding:32px 24px 40px;
+      text-align:center;
+      background:linear-gradient(180deg,#fffdfd 0%,#fff8fa 100%);
+    }
+    .footer p{margin:16px 0 0;font-size:11px;line-height:1.8;color:#a18591}
+    .footer .heart{margin-top:12px;font-size:22px;color:#ad7389}
+
+    .toast{
+      position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translate(-50%,20px);
+      background:#4e2a39;color:#fff;padding:13px 16px;border-radius:14px;font-size:12px;font-weight:700;
+      box-shadow:0 18px 34px rgba(78,42,57,.35);opacity:0;pointer-events:none;transition:opacity .25s ease, transform .25s ease;z-index:100;
+      max-width:calc(100vw - 26px);text-align:center;
+    }
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+
+    /* Fallback first: every section is visible even when JS/scroll observers fail. */
+    .reveal{opacity:1;transform:none}
+    .reveal.visible{animation:softRise .65s cubic-bezier(.2,.7,.2,1) both}
+    @keyframes softRise{from{opacity:.92;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+    @keyframes float{
+      0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}
+      50%{transform:translateY(-10px) rotate(var(--rot,0deg))}
+    }
+    .float-card.one{--rot:-10deg}
+    .float-card.two{--rot:10deg}
+    .float-card.three{--rot:-8deg}
+    @keyframes shine{
+      0%{transform:translateX(0) rotate(15deg)}
+      100%{transform:translateX(260%) rotate(15deg)}
+    }
+
+    @media (max-width:640px){
+      .hero::before{inset:14px 14px auto;height:480px}
+      .hero-inner{min-height:438px;padding:22px 18px 18px}
+      .floating-stack{position:relative;right:auto;bottom:auto;width:100%;height:140px;margin-top:12px}
+      .float-card.one{left:10px;right:auto}
+      .float-card.two{right:16px}
+      .float-card.three{left:115px}
+      .action-grid,.spotlight{grid-template-columns:1fr}
+      .social-wrap{grid-template-columns:1fr 1fr;gap:10px}
+      .social-card{padding:18px 16px;min-height:200px}
+      .social-card .social-title{font-size:24px}
+      .social-card .social-title.handle{font-size:19px}
+      .social-card p{font-size:11px}
+      .card.big{min-height:auto}
+      .slide{flex-basis:84%}
+      .section-title{font-size:38px}
+      .pix-title{font-size:32px}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .float-card,.shine::before{animation:none}
+      .reveal{opacity:1;transform:none}
+      .card,.btn{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="#inicio">amour.<small>beauty store</small></a>
+      <a class="mini-pill" href="#pix">♡ Pix & redes</a>
+    </header>
+
+    <section id="inicio" class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Beauty, autocuidado & amor</div>
+        <h1>Seu universo<br><em>Amour</em></h1>
+        <p>
+          <!-- novidades da Amour num lugar só. Depois, explore nossas fotos e descubra o <strong>Scoop Surpresa</strong>. -->
+        </p>
+        <div class="hero-actions">
+          <a href="#pix" class="btn btn-primary">Copiar Pix ♡</a>
+          <a href="#novidades" class="btn btn-secondary">Ver novidades ✦</a>
+        </div>
+
+        <div class="floating-stack" aria-hidden="true">
+          <div class="float-card one">
+            <span class="float-label">Pix da loja</span>
+            <div class="float-title">1 toque</div>
+            <div class="float-sub">Abra a página, copie o Pix e finalize no seu banco.</div>
+          </div>
+          <div class="float-card two">
+            <span class="float-label">Novidades</span>
+            <div class="mini-orbs"><span></span><span></span><span></span></div>
+            <div class="float-sub">Gloss, autocuidado e muito amor.</div>
+          </div>
+          <div class="float-card three">
+            <span class="glass-chip">✦ Scoop Surpresa</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section id="pix" class="section reveal">
+        <span class="section-overline">O mais importante primeiro</span>
+        <h2 class="section-title">Pague, siga e<br>fale com a Amour</h2>
+        <p class="section-text">
+          Tudo o que você precisa em primeiro lugar: Pix para pagar, Instagram para acompanhar e contato para fazer seus pedidos.
+        </p>
+
+        <div class="action-grid">
+          <article class="card pix-card big shine">
+            <div class="pix-top">
+              <small>PAGAMENTO COM PIX</small>
+              <h3 class="pix-title">Seu Pix<br>com um toque ♡</h3>
+              <p>
+                Toque no botão para copiar o código Pix da Amour e cole na opção <strong>Pix Copia e Cola</strong> do aplicativo do seu banco. O valor é definido na hora da compra.
+              </p>
+            </div>
+            <div>
+              <button id="copyPix" type="button" class="pix-button">♡ Copiar Pix da Amour</button>
+              <span class="pix-note">Antes de confirmar o pagamento, confira o destinatário e o valor no seu banco.</span>
+            </div>
+          </article>
+
+          <div class="social-wrap">
+            <article class="card social-card gradient reveal">
+              <div>
+                <small>INSTAGRAM</small>
+                <h3 class="social-title handle">@amour_<wbr>beauty<wbr>.store</h3>
+                <p>Veja produtos, novidades e lançamentos da Amour.</p>
+              </div>
+              <a class="social-link" id="instagramLink" href="https://www.instagram.com/amour_beauty.store/" target="_blank" rel="noopener noreferrer">Abrir Instagram ↗</a>
+            </article>
+
+            <article class="card social-card highlight reveal">
+              <div>
+                <small>PEDIDOS PELO WHATSAPP</small>
+                <h3 class="social-title">Fale com a gente</h3>
+                <p>Encomendas, dúvidas e reservas direto no WhatsApp.</p>
+              </div>
+              <a class="social-link" id="whatsappLink" href="https://wa.me/5511953066073?text=Oi%21%20Vim%20pela%20pagina%20da%20Amour%20Beauty%20e%20quero%20conhecer%20os%20produtos.%20%F0%9F%92%97" target="_blank" rel="noopener noreferrer">Enviar mensagem ↗</a>
+            </article>
+
+
+            <article class="card social-card gradient reveal wide">
+              <div>
+                <small>NOVIDADE</small>
+                <h3 class="social-title">Scoop Surpresa</h3>
+                <p>Makes por R$ 85 ou Produtos boticário e Eudora por R$ 169 — 4 produtos garantidos + extras.</p>
+              </div>
+              <a class="social-link" href="#scoop">Ver o Scoop ↘</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="novidades" class="section feed-section reveal">
+        <span class="section-overline">Vitrine visual</span>
+        <div class="feed-head">
+          <div>
+            <h2 class="section-title">Fotos do Instagram<br>+ novidades</h2>
+            <p class="section-text">Nos acompanhe na rede, veja todo dia dia atualizações .</p>
+          </div>
+          <div class="feed-controls" id="feedControls" hidden>
+            <button class="icon-btn" id="prevSlide" aria-label="Foto anterior">‹</button>
+            <button class="icon-btn" id="nextSlide" aria-label="Próxima foto">›</button>
+          </div>
+        </div>
+
+        <div class="feed-frame">
+          <!-- O feed oficial aparece imediatamente; o carrossel 3D personalizado substitui
+               apenas se a API retornar fotos válidas. Não exibimos fotos fictícias. -->
+          <div id="officialFeed" class="instagram-embed-wrap" aria-label="Publicações recentes do Instagram da Amour">
+            <p class="instagram-loading" id="officialLoading">Publicações da Amour ♡</p>
+            <!-- Integração OFICIAL do Simpleembed recomendada pelo fornecedor.
+                 Em arquivo local e em prévias internas scripts externos podem ser bloqueados.
+                 O teste definitivo deve ser feito em HTTPS num site publicado. -->
+            <div class="simpleembed-holder">
+              <script src="https://simpleembed.com/embed.js" data-feed-id="FEUGHuOvfLsMc7kSg35B" async></script>
+            </div>
+          </div>
+          <div id="galleryTrack" class="gallery-track" aria-label="Carrossel de novidades" tabindex="0" hidden></div>
+        </div>
+        <p id="galleryFootnote" class="feed-note">Fotos da @amour_beauty.store são carregadas ao abrir esta página em um site HTTPS publicado.</p>
+        <a class="feed-external" href="https://simpleembed.com/embed/FEUGHuOvfLsMc7kSg35B" target="_blank" rel="noopener noreferrer">Abrir fotos diretamente no Simpleembed ↗</a>
+        <noscript><p class="feed-note">Para visualizar as fotos no site, habilite JavaScript ou visite <a href="https://www.instagram.com/amour_beauty.store/" rel="noopener noreferrer">o Instagram da loja</a>.</p></noscript>
+      </section>
+      <section id="scoop" class="section reveal">
+        <span class="section-overline">Lançamento especial</span>
+        <h2 class="section-title">Chegou o<br>Scoop Surpresa ✦</h2>
+        <p class="section-text">
+          Uma experiência divertida para quem ama descobrir novos favoritos. Escolha seu universo e deixe a surpresa acontecer: <strong>cada Scoop garante 4 produtos, além dos extras</strong> ♡
+        </p>
+
+        <div class="spotlight">
+          <article class="card spot-card reveal">
+            <div class="visual">
+              <svg viewBox="0 0 190 190" aria-hidden="true"><ellipse cx="96" cy="166" rx="58" ry="12" fill="#82465a35"/><path d="M48 79h96l-12 75a8 8 0 0 1-8 7H67a8 8 0 0 1-8-7z" fill="#ffe8f0" stroke="#d18da8" stroke-width="5"/><path d="M57 79c0-21 17-38 38-38 12 0 22 4 30 11 8 8 13 17 13 27" fill="none" stroke="#d18da8" stroke-width="6" stroke-linecap="round"/><circle cx="73" cy="112" r="13" fill="#ef8ea7"/><circle cx="96" cy="108" r="13" fill="#cc6a8a"/><circle cx="119" cy="115" r="13" fill="#b05a76"/><rect x="85" y="56" width="22" height="18" rx="6" fill="#f6bfd0"/></svg>
+            </div>
+            <div class="spot-body">
+              <small>EDIÇÃO 01</small>
+              <h3 class="spotlight-title">Scoop<br>de Makes</h3>
+              <div class="spot-price"><small>R$</small><strong>85</strong></div>
+              <span class="spot-badge">✦ 4 produtos garantidos + extras</span>
+              <p>Uma mistura charmosa com itens de maquiagem, brilho e beleza para surpreender em cada edição.</p>
+              <div class="spot-list">
+                <span class="spot-chip">♡ ideal para presentear</span>
+                <span class="spot-chip">✦ edições limitadas</span>
+              </div>
+              <a class="btn btn-primary spot-cta" href="https://wa.me/5511953066073?text=Oi%21%20Vim%20pela%20p%C3%A1gina%20da%20Amour%20e%20quero%20o%20Scoop%20de%20Makes%20%28R%24%2085%29%20%F0%9F%92%97" target="_blank" rel="noopener noreferrer">Quero o Scoop de Makes ♡</a>
+            </div>
+          </article>
+
+          <article class="card spot-card reveal">
+            <div class="visual">
+              <svg viewBox="0 0 190 190" aria-hidden="true"><ellipse cx="96" cy="166" rx="58" ry="12" fill="#8b5e4530"/><rect x="47" y="74" width="96" height="86" rx="16" fill="#f7e7d9" stroke="#caa27f" stroke-width="5"/><path d="M67 74c0-18 13-33 29-33 7 0 14 3 19 7 8 5 13 15 13 26" fill="none" stroke="#caa27f" stroke-width="6" stroke-linecap="round"/><rect x="72" y="93" width="45" height="18" rx="9" fill="#dba37f"/><rect x="90" y="111" width="20" height="32" rx="5" fill="#9f6e59"/><g transform="rotate(-17 128 115)"><rect x="118" y="77" width="21" height="67" rx="4" fill="#b57a67"/><rect x="120" y="69" width="17" height="12" rx="3" fill="#f8f0e8"/><rect x="122" y="88" width="13" height="34" fill="#e5cfba"/></g></svg>
+            </div>
+            <div class="spot-body">
+              <small>EDIÇÃO 02</small>
+              <h3 class="spotlight-title">Scoop<br>Produtos Boticário e Eduora</h3>
+              <div class="spot-price"><small>R$</small><strong>169</strong></div>
+              <span class="spot-badge">✦ 4 produtos garantidos + extras</span>
+              <p>Para quem ama autocuidado e cheirinhos especiais.</p>
+              <div class="spot-list">
+                <span class="spot-chip">♡ body Splash & autocuidado</span>
+                <span class="spot-chip">✦ produtos Boticário e Eudora</span>
+              </div>
+              <a class="btn btn-primary spot-cta" href="https://wa.me/5511953066073?text=Oi%21%20Vim%20pela%20p%C3%A1gina%20da%20Amour%20e%20quero%20o%20Scoop%20Body%20%26%20O%20Botic%C3%A1rio%20%28R%24%20169%29%20%F0%9F%92%97" target="_blank" rel="noopener noreferrer">Quero o Scoop Body ♡</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section end-cta reveal" id="contato">
+        <span class="section-overline">Feito para você ♡</span>
+        <h2 class="section-title">Se apaixonou?<br>Vem conversar.</h2>
+        <p class="section-text">Ficou de olho em um produto ou quer reservar seu Scoop? Chama a Amour no WhatsApp e conta o que você procura.</p>
+        <a class="btn btn-primary" href="https://wa.me/5511953066073?text=Oi%21%20Vim%20pela%20pagina%20da%20Amour%20Beauty%20e%20quero%20conhecer%20os%20produtos.%20%F0%9F%92%97" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp ↗</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="#inicio" class="brand">amour.<small>beauty store</small></a>
+      <p>Feito com carinho para encantar e te deixar ainda mais linda ♡</p>
+      <div class="heart">♡</div>
+    </footer>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite" id="toast"></div>
+
+  <script>
+    // ===========================
+    // CONFIGURAÇÃO DA AMOUR
+    // ===========================
+    const INSTAGRAM_FEED_ID = 'FEUGHuOvfLsMc7kSg35B';
+    const PIX_COPIA_COLA = '00020101021226860014br.gov.bcb.pix2564pix.nubank.com.br/api/placa/05eb9ec0-e313-4699-8499-db469af90f765204000053039865802BR5913NAO INFORMADO6009SAO PAULO62070503***63043398';
+    const INSTAGRAM_URL = 'https://www.instagram.com/amour_beauty.store/';
+    const WHATSAPP_URL = 'https://wa.me/5511953066073?text=Oi%21%20Vim%20pela%20pagina%20da%20Amour%20Beauty%20e%20quero%20conhecer%20os%20produtos.%20%F0%9F%92%97';
+
+    const toast = document.getElementById('toast');
+    let toastTimer;
+    function showToast(message){
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(()=>toast.classList.remove('show'), 3200);
+    }
+
+    async function copyText(text){
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+      const field = document.createElement('textarea');
+      field.value = text;
+      field.style.cssText = 'position:fixed;opacity:0;left:-9999px';
+      document.body.appendChild(field);
+      field.select();
+      const done = document.execCommand('copy');
+      field.remove();
+      if(!done) throw new Error('copy unavailable');
+    }
+
+    document.getElementById('copyPix').addEventListener('click', async ()=>{
+      try{
+        await copyText(PIX_COPIA_COLA);
+        showToast('Pix copiado! Cole no aplicativo do seu banco ♡');
+      }catch(err){
+        showToast('Não foi possível copiar. Tente abrir pelo navegador.');
+      }
+    });
+
+    const track = document.getElementById('galleryTrack');
+    const footnote = document.getElementById('galleryFootnote');
+    const officialFeed = document.getElementById('officialFeed');
+    const feedControls = document.getElementById('feedControls');
+    // ===== Carrossel: navegação + passagem automática =====
+    const AUTO_MS = 3500;            // tempo de cada foto (ms)
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const scrollMode = reduceMotion ? 'auto' : 'smooth';
+
+    function currentIndex(){
+      const slides = [...track.querySelectorAll('.slide')];
+      let best = 0, dist = Infinity;
+      slides.forEach((el,i)=>{
+        const d = Math.abs(el.offsetLeft - track.offsetLeft - track.scrollLeft);
+        if(d < dist){ dist = d; best = i; }
+      });
+      return best;
+    }
+    function goTo(i){
+      const slides = track.querySelectorAll('.slide');
+      if(!slides.length) return;
+      const n = (i + slides.length) % slides.length;   // volta ao início no fim
+      track.scrollTo({left: slides[n].offsetLeft - track.offsetLeft, behavior: scrollMode});
+    }
+    function slideBy(dir){
+      const slides = track.querySelectorAll('.slide');
+      const max = track.scrollWidth - track.clientWidth;
+      if(dir > 0 && track.scrollLeft >= max - 8) return goTo(0);           // chegou no fim → recomeça
+      if(dir < 0 && track.scrollLeft <= 8) return goTo(slides.length - 1); // no começo → vai pro fim
+      goTo(currentIndex() + dir);
+    }
+
+    let autoTimer, paused = false;
+    function startAuto(){
+      clearInterval(autoTimer);
+      autoTimer = setInterval(()=>{
+        if(paused || document.hidden || track.hidden) return;
+        slideBy(1);
+      }, AUTO_MS);
+    }
+    // Pausa só enquanto a pessoa interage; depois volta a passar sozinho.
+    let resumeTimer;
+    function pauseBriefly(ms = 6000){
+      paused = true;
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(()=>{ paused = false; }, ms);
+    }
+    document.getElementById('prevSlide').addEventListener('click', ()=>{ slideBy(-1); pauseBriefly(); });
+    document.getElementById('nextSlide').addEventListener('click', ()=>{ slideBy(1); pauseBriefly(); });
+    track.addEventListener('pointerdown', ()=>pauseBriefly());
+    track.addEventListener('touchstart', ()=>pauseBriefly(), {passive:true});
+    track.addEventListener('wheel', ()=>pauseBriefly(), {passive:true});
+    track.addEventListener('mouseenter', ()=>{ paused = true; clearTimeout(resumeTimer); });
+    track.addEventListener('mouseleave', ()=>pauseBriefly(1500));
+
+    // animação suave ao rolar
+    if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {threshold:.08});
+      document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    }
+
+    // O snippet oficial do Simpleembed exibe o feed por conta própria.
+    // O carrossel 3D substitui o widget quando a API JSON responde e as fotos REAIS carregam.
+    // Formato da API (docs Simpleembed): { feed:{...}, posts:[{ id, mediaType, caption, permalink,
+    //   imageUrl, timestamp, childCount, media:{ url, thumbnailUrl, expiresAt, children:[{mediaType, mediaUrl, thumbnailUrl}] } }] }
+    const isHttps = u => typeof u === 'string' && /^https:\/\//i.test(u);
+
+    // Escolhe a melhor imagem de cada post (foto, capa do Reels ou 1ª foto do carrossel).
+    function pickImage(post){
+      const media = post.media || {};
+      const type = String(post.mediaType || '').toUpperCase();
+      const kids = Array.isArray(media.children) ? media.children : [];
+      const firstKid = kids[0] || {};
+      const kidImg = String(firstKid.mediaType||'').toUpperCase() === 'VIDEO'
+        ? firstKid.thumbnailUrl : (firstKid.mediaUrl || firstKid.thumbnailUrl);
+      const candidates = type === 'VIDEO'
+        ? [media.thumbnailUrl, post.imageUrl, post.thumbnailUrl]
+        : [post.imageUrl, media.url, media.thumbnailUrl, kidImg, post.mediaUrl];
+      return candidates.filter(isHttps);
+    }
+
+    // Testa as URLs em ordem e devolve a primeira que realmente carrega no navegador.
+    function firstLoadable(urls, ms = 8000){
+      return new Promise(resolve=>{
+        let i = 0;
+        const next = () => {
+          if(i >= urls.length) return resolve(null);
+          const url = urls[i++];
+          const im = new Image();
+          im.referrerPolicy = 'no-referrer';
+          const t = setTimeout(()=>{ im.src=''; next(); }, ms);
+          im.onload = () => { clearTimeout(t); resolve(url); };
+          im.onerror = () => { clearTimeout(t); next(); };
+          im.src = url;
+        };
+        next();
+      });
+    }
+
+    async function loadInstagram(){
+      const id = INSTAGRAM_FEED_ID.trim();
+      if(!id) return;
+      try{
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10000);
+        let response;
+        try {
+          response = await fetch('https://simpleembed.com/api/feeds/' + encodeURIComponent(id), {
+            signal: controller.signal,
+            headers: { 'Accept': 'application/json' }
+          });
+        } finally { clearTimeout(timeout); }
+        if(!response.ok) throw new Error('Feed HTTP ' + response.status);
+        const data = await response.json();
+        const raw = Array.isArray(data.posts) ? data.posts
+                  : Array.isArray(data.data) ? data.data
+                  : Array.isArray(data) ? data : [];
+
+        const candidates = raw
+          .filter(post => post && isHttps(post.permalink))
+          .map(post => ({ post, urls: pickImage(post) }))
+          .filter(item => item.urls.length)
+          .slice(0, 12);
+        if(!candidates.length) throw new Error('Sem fotos retornadas no JSON');
+
+        // Carrega todas em paralelo e mantém só as fotos que abriram de verdade.
+        const loaded = await Promise.all(candidates.map(async item => ({...item, src: await firstLoadable(item.urls)})));
+        const ready = loaded.filter(item => item.src);
+        if(!ready.length) throw new Error('Nenhuma imagem do Instagram carregou neste navegador');
+
+        const frag = document.createDocumentFragment();
+        for(const {post, src} of ready){
+          const type = String(post.mediaType || '').toUpperCase();
+          const a = document.createElement('a');
+          a.className = 'slide post';
+          a.href = post.permalink;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.setAttribute('aria-label','Abrir publicação da Amour no Instagram');
+          const img = document.createElement('img');
+          img.src = src;
+          img.referrerPolicy = 'no-referrer';
+          img.alt = (post.caption || 'Publicação da Amour no Instagram').replace(/\s+/g,' ').slice(0,180);
+          img.decoding = 'async';
+          const info = document.createElement('div');
+          info.className = 'slide-info';
+          const line = document.createElement('span');
+          line.textContent = type === 'VIDEO' ? 'Reels da Amour ▶'
+                           : type.includes('CAROUSEL') ? 'Carrossel da Amour ✦'
+                           : 'Instagram da Amour';
+          const strong = document.createElement('strong'); strong.textContent = 'Ver publicação ↗';
+          info.append(line,strong);
+          a.append(img,info);
+          frag.appendChild(a);
+        }
+        track.replaceChildren(frag);
+        officialFeed.hidden = true;
+        track.hidden = false;
+        feedControls.hidden = ready.length < 2;
+        footnote.textContent = 'Fotos reais da @amour_beauty.store ♡ Deslize ou use as setas — o carrossel também avança sozinho.';
+        track.scrollLeft = 0;
+        if(ready.length > 1){ paused = false; startAuto(); }
+      }catch(error){
+        // O widget oficial permanece no lugar — sem fotos falsas.
+        console.warn('Carrossel do Instagram indisponível; exibindo widget oficial.', error);
+        showFallbackIfEmpty();
+        footnote.textContent = location.protocol === 'file:'
+          ? 'Você abriu um arquivo local. Se as fotos não aparecerem, publique em HTTPS (GitHub Pages) e abra o link público.'
+          : 'Não deu para montar o carrossel agora; o feed oficial continua disponível acima.';
+      }
+    }
+    // Se nem o widget oficial aparecer (rede bloqueada, prévia do app etc.),
+    // troca a caixa vazia por um convite bonito para abrir o Instagram.
+    function showFallbackIfEmpty(){
+      const holder = officialFeed.querySelector('.simpleembed-holder');
+      const frame = holder && holder.querySelector('iframe');
+      const frameOk = frame && frame.getBoundingClientRect().height > 140;
+      if(frameOk || officialFeed.classList.contains('is-fallback')) return;
+      officialFeed.classList.add('is-fallback');
+      const box = document.createElement('div');
+      box.className = 'insta-fallback';
+      box.innerHTML = '<span class="section-overline" style="margin:0">@amour_beauty.store</span>'
+        + '<strong>Nossas fotos estão<br>no Instagram ♡</strong>'
+        + '<p>Toque abaixo para ver os lançamentos, looks e novidades da Amour.</p>';
+      const a = document.createElement('a');
+      a.className = 'btn btn-primary'; a.href = INSTAGRAM_URL;
+      a.target = '_blank'; a.rel = 'noopener noreferrer';
+      a.textContent = 'Ver fotos no Instagram ↗';
+      box.appendChild(a);
+      officialFeed.appendChild(box);
+    }
+    // Rede de segurança: se após 12s não houver carrossel nem widget visível, mostra o convite.
+    setTimeout(()=>{ if(track.hidden) showFallbackIfEmpty(); }, 12000);
+    loadInstagram();
+  </script>
+</body>
+</html>
